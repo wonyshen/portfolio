@@ -11,7 +11,8 @@ $preferred_method_of_contact = $_POST['preferred-method-of-contact'];
 
 $msg = "<p>Name: $name</p><p>Company: $company</p><p>Email: $email</p> <p>Heard About Us Through: $heard_about_us</p> <p>Message: $message</p> <p>Project Budget: $project_budget</p> <p>Project Timeline: $project_timeline</p> <p>Preferred Method of Contact: $preferred_method_of_contact</p>";
 
-// set up email server
+
+// set up email server here
 $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
     ->setUsername('hello@natthandavis.com')
     ->setPassword('F0xT4il!');
@@ -25,6 +26,7 @@ $message = (new Swift_Message($subject))
 
 $result = $mailer->send($message);
 
+// log email here
 error_log("Email result: " . ($result ? 'sent' : 'failed') . "\n", 3, 'email.log');
 
 header('Location: /');
