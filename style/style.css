@@ -128,11 +128,11 @@ h1, h2, h3, h4, h5, h6, .serif{
 
 
 
-
 /* button */
 .button-container {
     position: relative;
     display: inline-block;
+    min-width: 200px;   
 }
 
 .button-container .button {
@@ -144,6 +144,8 @@ h1, h2, h3, h4, h5, h6, .serif{
     border: none;
     z-index: 1;
     cursor: pointer;
+    min-width: 200px;
+    
 }
 
 .button-container::before {
